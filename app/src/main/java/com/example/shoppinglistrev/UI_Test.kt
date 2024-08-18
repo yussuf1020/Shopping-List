@@ -25,7 +25,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.shoppinglistrev.ui.theme.ShoppingListRevTheme
 
 @Composable
 fun ShoppingListTest() {
@@ -50,26 +52,35 @@ fun ShoppingListTest() {
                 }
             }
         }
+        Box(modifier = Modifier.fillMaxWidth().align(Alignment.BottomEnd)){
+            Button(
+                onClick = {
+                    Toast.makeText(context, "Add an Item", Toast.LENGTH_SHORT).show()
 
-        Button(
-            onClick = {
-                Toast.makeText(context, "Add an Item", Toast.LENGTH_SHORT).show()
-
-            },
-            modifier = Modifier
-                .size(90.dp)
-                .align(Alignment.BottomEnd)
-                .padding(16.dp),
-            shape = CircleShape,
-            contentPadding = PaddingValues(0.dp),
-            colors = ButtonDefaults.outlinedButtonColors(containerColor = Color(0xFF008080))
-        ) {
-            Icon(
-                Icons.Default.Add,
-                contentDescription = "Add",
-                tint = Color.White,
-                modifier = Modifier.size(40.dp)
-            )
+                },
+                modifier = Modifier
+                    .size(90.dp)
+                    .align(Alignment.BottomEnd)
+                    .padding(16.dp),
+                shape = CircleShape,
+                contentPadding = PaddingValues(0.dp),
+                colors = ButtonDefaults.outlinedButtonColors(containerColor = Color(0xFF008080))
+            ) {
+                Icon(
+                    Icons.Default.Add,
+                    contentDescription = "Add",
+                    tint = Color.White,
+                    modifier = Modifier.size(40.dp)
+                )
+            }
         }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ShoppingListPreview() {
+    ShoppingListRevTheme {
+        ShoppingListTest()
     }
 }
