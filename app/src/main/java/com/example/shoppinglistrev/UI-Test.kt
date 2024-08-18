@@ -28,7 +28,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ShoppingList() {
+fun ShoppingListTest() {
     val context = LocalContext.current
     var sItems by remember { mutableStateOf(listOf<ShoppingItem>()) }
 
